@@ -1,17 +1,6 @@
 const express = require("express");
-// import { Router } from "express"; // ES6+
 const router = express.Router();
+const userRouter = require("./user");
 
-router.get("/", (req, res) => {
-  res.send("User Home Page");
-});
-
-router.get("/profile", (req, res) => {
-  res.send("User Profile Page");
-});
-
-router.get("/settings", (req, res) => {
-  res.send("User Settings Page");
-});
-
+router.use("/user", userRouter);
 module.exports = router;
